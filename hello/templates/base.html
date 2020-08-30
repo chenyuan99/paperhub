@@ -1,19 +1,220 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<!-- <html lang="en"> -->
+<html lang=zh-cmn-Hans>
 
 <head>
+  <meta charset="utf-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-  <title>A Virginia Tech Tech Together Campaign Application Proposal</title>
-  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+  <title>独馨科研社区</title>
+  <link rel="shortcut icon" type="image/png" href="{% static '独馨.png' %}" />
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <style type="text/css">
+    .navbar {
+      background-color: #ffffff;
+      min-height: 80px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar .navbar-brand {
+      color: #000000;
+      height: 80px;
+      line-height: 80px;
+    }
+
+    .navbar .navbar-brand:hover,
+    .navbar .navbar-brand:focus {
+      color: #fffefe;
+    }
+
+    .navbar .navbar-text {
+      color: #000000;
+    }
+
+    .navbar .navbar-text a {
+      color: #fffefe;
+    }
+
+    .navbar .navbar-text a:hover,
+    .navbar .navbar-text a:focus {
+      color: #fffefe;
+    }
+
+    .navbar .navbar-nav .nav-link {
+      color: #000000;
+      border-radius: .25rem;
+      margin: 0 0.25em;
+    }
+
+    .navbar .navbar-nav .nav-link:not(.disabled):hover,
+    .navbar .navbar-nav .nav-link:not(.disabled):focus {
+      color: #fffefe;
+    }
+
+    .navbar .navbar-nav .nav-item.active .nav-link,
+    .navbar .navbar-nav .nav-item.active .nav-link:hover,
+    .navbar .navbar-nav .nav-item.active .nav-link:focus,
+    .navbar .navbar-nav .nav-item.show .nav-link,
+    .navbar .navbar-nav .nav-item.show .nav-link:hover,
+    .navbar .navbar-nav .nav-item.show .nav-link:focus {
+      color: #fffefe;
+      background-color: #000000;
+    }
+
+    .navbar .navbar-toggle {
+      border-color: #000000;
+      margin-top: 23px;
+      padding: 9px 10px !important;
+    }
+
+    .navbar .navbar-toggle:hover,
+    .navbar .navbar-toggle:focus {
+      background-color: #000000;
+      margin-top: 23px;
+      padding: 9px 10px !important;
+    }
+
+    .navbar .navbar-toggle .navbar-toggler-icon {
+      color: #000000;
+      margin-top: 23px;
+      padding: 9px 10px !important;
+    }
+
+    .navbar .navbar-collapse,
+    .navbar .navbar-form {
+      border-color: #000000;
+    }
+
+    .navbar .navbar-link {
+      color: #000000;
+    }
+
+    .navbar .navbar-link:hover {
+      color: #fffefe;
+    }
+
+    @media (max-width: 575px) {
+      .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #000000;
+      }
+
+      .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+      .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #fffefe;
+      }
+
+      .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #fffefe;
+        background-color: #000000;
+      }
+
+      .navbar-nav>li>a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #000000;
+      }
+
+      .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+      .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #fffefe;
+      }
+
+      .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #fffefe;
+        background-color: #000000;
+      }
+
+      .navbar-nav>li>a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #000000;
+
+
+      }
+
+      .navbar-nav>li>a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+      }
+
+      .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+      .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #fffefe;
+      }
+
+      .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #fffefe;
+        background-color: #000000;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #000000;
+      }
+
+      .navbar-nav>li>a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+      }
+
+      .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+      .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #fffefe;
+      }
+
+      .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #fffefe;
+        background-color: #000000;
+      }
+    }
+
+    .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+      color: #000000;
+    }
+
+    .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+      color: #fffefe;
+    }
+
+    .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+      color: #fffefe;
+      background-color: #000000;
+    }
+
+    .index-header__logo {
+      height: 50px;
+      width: 50px;
+      padding-bottom: 0;
+    }
+
     .jumbotron {
-      background: #861F41;
-      color: white;
+      background: white;
+      color: black;
       padding-bottom: 80px
     }
 
@@ -27,7 +228,7 @@
     }
 
     .jumbotron p {
-      color: #FFFFFF;
+      color: black;
       max-width: 75%;
       margin: 1em auto 2em
     }
@@ -38,7 +239,7 @@
 
     .jumbotron .lang-logo {
       display: block;
-      background: #b01302;
+      background: white;
       border-radius: 50%;
       overflow: hidden;
       width: 100px;
@@ -65,8 +266,8 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-static-top navbar-inverse">
-    <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-static-top navbar">
+    <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
           data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -75,7 +276,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="https://www.maroonpower.com">MaroonPower</a>
+        <a class="navbar-brand" href="https://duxin.herokuapp.com"> <img class="index-header__logo"
+            src="{% static '独馨.png' %}" alt="独馨"></a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
@@ -83,16 +285,16 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Search">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">搜索</button>
           </form>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="active">
-            <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+            <a href="/"><span class="glyphicon glyphicon-home"></span> 主页</a>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span
-                class="glyphicon glyphicon-th"></span> Buildings<span class="caret"></span></a>
+                class="glyphicon glyphicon-th"></span> 功能<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="/newman-library">Newman Library</a></li>
               <li><a href="/togresson-hall">Togresson Hall</a></li>
@@ -102,10 +304,10 @@
           </li>
           {% if user.is_authenticated %}
           <li><a href="/account">{{user.username|title}}</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/logout">登出</a></li>
           {% else %}
-          <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-          <li><a href="/register">Register</a></li>
+          <li><a href="/login"><span class="glyphicon glyphicon-user"></span> 登录</a></li>
+          <li><a href="/register">注册</a></li>
           {% endif %}
         </ul>
       </div>
