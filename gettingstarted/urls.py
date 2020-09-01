@@ -1,7 +1,6 @@
-from django.urls import path, include
+from django.urls import include, re_path, path
 from django.views.generic.base import RedirectView
 from django.contrib import admin
-from django.urls import include, re_path
 
 admin.autodiscover()
 
@@ -18,6 +17,7 @@ import hello.views
 app_name = 'main'  # here for namespacing of urls.
 favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 urlpatterns = [
+    path('hello/', include('hello.urls')),
     path("", hello.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
