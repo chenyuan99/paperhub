@@ -2,8 +2,9 @@
 
 {% block content %}
 <div class="jumbotron text-center">
+    <div class="clear"></div>
     <div class="container">
-        <h1>Register</h1>
+        <h1>注册</h1>
     </div>
 </div>
 {% if messages %}
@@ -24,10 +25,11 @@
     <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
-        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        <button class="btn btn-outline-info" type="submit">提交</button>
     </form>
 </div>
 <div class="container text-center">
-    If you already have an account <a href="/login" target="blank"><strong>login</strong></a> instead.
+    你有账号哦！在这里 <a href="/login" target="blank"><strong>登录</strong></a>.
 </div>
+<div class="clear"></div>
 {% endblock %}

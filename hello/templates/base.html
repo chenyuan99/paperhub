@@ -224,11 +224,24 @@
 
     .jumbotron .btn-primary {
       background: #C64600;
-      border-color: #C64600
+      border: none;
+    }
+
+    .jumbotron .button-index {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
     }
 
     .jumbotron .btn-primary:hover {
-      background: #E87722
+      background: #E87722;
+      border: none;
     }
 
     .jumbotron p {
@@ -263,6 +276,7 @@
 
     .footer {
       margin: auto;
+      background: #f6f6f6;
       text-align: center;
       padding-bottom: 60px
     }
@@ -273,7 +287,6 @@
       color: black;
       padding-bottom: 80px
     }
-    
   </style>
 
 </head>
@@ -289,8 +302,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"> <img class="index-header__logo"
-            src="{% static '独馨.png' %}" alt="独馨"></a>
+        <a class="navbar-brand" href="/"> <img class="index-header__logo" src="{% static '独馨.png' %}" alt="独馨"></a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
