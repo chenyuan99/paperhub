@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
+    "python.pythonPath": "C:\\Users\\cheny\\.conda\\envs\\pytorch3d\\python.exe",
     "python.formatting.provider": "black"
 }
