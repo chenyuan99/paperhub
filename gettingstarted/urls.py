@@ -22,6 +22,7 @@ urlpatterns = [
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
     path('polls/', include('polls.urls')),
+    re_path(r'^forum/', include('django_forum_app.urls')),
     path("register/", hello.views.register, name="register"),
     path("logout", hello.views.logout_request, name="logout"),
     path("login", hello.views.login_request, name="login"),

@@ -28,8 +28,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'django.contrib.sites',
+    'photologue',
+    'sortedm2m',
     'polls.apps.PollsConfig',
     "hello",
+    'django_forum_app',
 ]
 
 MIDDLEWARE = [
