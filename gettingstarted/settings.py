@@ -1,11 +1,13 @@
 import os
 import django_heroku
 import dj_database_url
+import logging
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+AUTH_USER_MODEL = "users.user" 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -30,6 +32,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'polls.apps.PollsConfig',
     "hello",
+    'users',
+    'asks',
+    'answers',
+    'comments',
+    'topics',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +95,33 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)-8s %(asctime)s %(filename)s[line:%(lineno)d] %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)-8s %(message)s'
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+    }
+}
+logger = logging.getLogger('django')
 
 
 # Internationalization
