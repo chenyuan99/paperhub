@@ -4,4 +4,4 @@ django-heroku
 django-mobile
 django-photologue
 django-tinymce
-pysql
+pymysql
