@@ -332,10 +332,9 @@
             <a class="nav-link"  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">   
               功能<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a  class="dropdown-item" href="/newman-library">Newman Library</a></li>
-              <li><a  class="dropdown-item" href="/togresson-hall">Togresson Hall</a></li>
-              <li><a  class="dropdown-item" href="/mcbryde-hall">McBryde Hall</a></li>
-              <li><a  class="dropdown-item" href="/all-building">All Buildings</a></li>
+              <li><a href="/">首页</a></li>
+              <li><a href="{% url 'explore' %}">发现</a></li>
+              <li><a href="{% url 'topics:index' %}">话题</a></li>
             </ul>
           </li>
           {% if user.is_authenticated %}
@@ -349,6 +348,71 @@
       </div>
     </div>
   </nav>
+
+  <!-- <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: white; font-size: 14px; min-width: 1024px;">
+    <div class="container-fulid">
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10 ">
+
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-collapse-example">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="{% url 'index' %}" style="font-size: 30px; color: #0084ff">知乎</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-collapse-example">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">首页</a></li>
+                        <li><a href="{% url 'explore' %}">发现</a></li>
+                        <li><a href="{% url 'topics:index' %}">话题</a></li>
+
+                    </ul>
+                    <form action="{% url 'search' %}" class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input name="s" type="text" class="form-control" placeholder="搜索">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                    {% if user.is_authenticated %}
+                       <button class="Button Button-blue nav-btn" type="button" style="margin-top: 3px" data-toggle="modal" data-target="#askModal">提问</button>
+                    {% else %}
+                        <button class="Button Button-blue nav-btn" type="button" style="margin-top: 3px" data-toggle="modal" data-target="#loginModal" >提问</button>
+                    {% endif %}
+
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding: 5px">
+                                    <img src="{{ user.get_image_url }}" class="img-rounded" width="30" height="30"></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{% url 'users:answers' user.id %}">我的主页</a></li>
+                                    <li><a href="{% url 'users:setting' %}">设置</a></li>
+                                    <li><a href="{% url 'logout' %}">退出</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li style="margin-top: 3px">
+                                <button class="Button Button-white nav-btn" type="button" data-toggle="modal" data-target="#loginModal">登录</button>
+                            </li>
+                            <li style="margin-top: 3px">
+                                <button class="Button Button-blue nav-btn" type="button" data-toggle="modal" data-target="#registerModal">加入知乎</button>
+                            </li>
+                            </ul>
+                        {% endif %}
+                </div><!-- END .navbar-collapse -->
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+
 
   {% block content %}{% endblock %}
 

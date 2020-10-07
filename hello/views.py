@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from hello.forms import NewUserForm,  AddEventForm, AddGuestForm
-from hello.models import Greeting, Event, Guest
+from hello.forms import NewUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -17,11 +16,6 @@ def index(request):
 
 def about(request):
     return render(request, "main/about.html")
-
-# def homepage(request):
-#     return render(request = request,
-#                   template_name='main/home.html',
-#                   context = {"tutorials":Tutorial.objects.all})
 
 def db(request):
     greeting = Greeting()
