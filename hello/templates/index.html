@@ -10,7 +10,6 @@
                 <img src="{% static '独馨.png'%}">
         </a>
 </div>
-<hr>
 <div class="jumbotron text-right">
         <div class="container">
                 <div class="container text-left">
@@ -23,11 +22,11 @@
         <div class="container">
                 <h2>发现研究</h2>
                 {{form.as_p}}
-                <form class="navbar-form navbar-left" role="search"></form>
-                <div class="form-group">
-                        <input type="text" class="form-control" placeholder="搜索">
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
+                <form action="{% url 'search' %}" class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                                <input name="s" type="text" class="form-control" placeholder="搜索">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
                 </form>
         </div>
 </div>
@@ -41,54 +40,46 @@
                 <h2>扩大你的学术影响力</h2>
         </div>
 </div>
-<!-- <hr> -->
 <div class="jumbotron text-center">
         <div class="container">
                 <h2>惟吾德馨</h2>
-                <button class="btn btn-lg  btn-default">免费加入</button>
+                <button class="btn btn-lg  btn-default" data-toggle="modal" data-target="#registerModal">免费加入</button>
         </div>
-</div>
-<div class="container ">
-        <div class="alert alert-warning alert-dismissible text-center" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                We serve cookies on this site to analyze traffic, remember your preferences, and optimize your
-                experience.
-        </div>
-</div>
-<hr>
-<div class="container">
-        <h2 class="text-center">独馨企业服务</h2>
-        <div class="row">
-                <div class="col-sm-3 col-md-4">
-                        <div class="thumbnail">
-                                <h3 class="index-footer__text">科研招聘</h3>
-                                <div class="index-footer__subtext">Hire qualified researchers and build
-                                        the best teams in science.</div>
-                                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                                <div class="index-footer__info">
-                                        <h3 class="index-footer__text">广告投放</h3>
-                                        <div class="index-footer__subtext">Grow your brand&#x27;s impact in the
-                                                scientific community with the world&#x27;s leading network for
-                                                scientists.</div>
-                                        <p><a class="btn btn-secondary" href="#" role="button">View details
-                                                        &raquo;</a></p>
+        <hr>
+        <div class="container">
+                <h2 class="text-center">独馨企业服务</h2>
+                <div class="row">
+                        <div class="col-sm-3 col-md-4">
+                                <div class="thumbnail">
+                                        <h3 class="index-footer__text">科研招聘</h3>
+                                        <div class="index-footer__subtext">Hire qualified researchers and build
+                                                the best teams in science.</div>
+                                        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
+                                        </p>
                                 </div>
                         </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                                <div class="index-footer__info">
-                                        <h3 class="index-footer__text">产学转化</h3>
-                                        <div class="index-footer__subtext">Grow your brand&#x27;s impact in the
-                                                scientific community with the world&#x27;s leading network for
-                                                scientists.</div>
-                                        <p><a class="btn btn-secondary" href="#" role="button">View details
-                                                        &raquo;</a></p>
+                        <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                        <div class="index-footer__info">
+                                                <h3 class="index-footer__text">广告投放</h3>
+                                                <div class="index-footer__subtext">Grow your brand&#x27;s impact in the
+                                                        scientific community with the world&#x27;s leading network for
+                                                        scientists.</div>
+                                                <p><a class="btn btn-secondary" href="#" role="button">View details
+                                                                &raquo;</a></p>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                        <div class="index-footer__info">
+                                                <h3 class="index-footer__text">产学转化</h3>
+                                                <div class="index-footer__subtext">Grow your brand&#x27;s impact in the
+                                                        scientific community with the world&#x27;s leading network for
+                                                        scientists.</div>
+                                                <p><a class="btn btn-secondary" href="#" role="button">View details
+                                                                &raquo;</a></p>
+                                        </div>
                                 </div>
                         </div>
                 </div>
