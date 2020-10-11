@@ -14,6 +14,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <style type="text/css">
+    .container {
+      background-color: #ffffff
+    }
+
     .navbar {
       background-color: #ffffff;
       min-height: 80px;
@@ -287,8 +291,6 @@
     }
 
     .footer {
-      margin: auto;
-      /* background: #f6f6f6; */
       background: white;
       text-align: center;
       padding-bottom: 60px
@@ -297,7 +299,6 @@
     .clear {
       padding-top: 50px;
       background: white;
-      color: black;
       padding-bottom: 80px
     }
   </style>
@@ -391,17 +392,6 @@
                         <li><a href="{% url 'topics:index' %}">话题</a></li>
 
                     </ul>
-                    <form action="{% url 'search' %}" class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input name="s" type="text" class="form-control" placeholder="搜索">
-                        </div>
-                        <button type="submit" class="btn btn-default">搜索</button>
-                    </form>
-                    {% if user.is_authenticated %}
-                       <button class="Button Button-blue nav-btn" type="button" style="margin-top: 3px" data-toggle="modal" data-target="#askModal">提问</button>
-                    {% else %}
-                        <button class="Button Button-blue nav-btn" type="button" style="margin-top: 3px" data-toggle="modal" data-target="#loginModal" >提问</button>
-                    {% endif %}
 
                     <ul class="nav navbar-nav navbar-right">
                         {% if user.is_authenticated %}
@@ -424,10 +414,6 @@
                             </ul>
                         {% endif %}
                 </div><!-- END .navbar-collapse -->
-  <!-- </div>
-        </div>
-    </div>
-</nav> --> -->
 
   <!-- 对话框HTML -->
   <div class="modal fade" id="askModal">
@@ -490,8 +476,8 @@
     <div class="modal-dialog" style="width: 420px">
       <div class="modal-content">
         <div class="login-header">
-          <p style="font-size: 45px; margin-bottom: 40px">知乎</p>
-          <h1 style="font-weight: 400">登录知乎，发现更大的世界</h1>
+          <p style="font-size: 45px; margin-bottom: 40px">独馨</p>
+          <h1 style="font-weight: 400">登录独馨，发现更大的世界</h1>
         </div>
         <div class="login-content">
           <form id="register-form">
@@ -525,28 +511,17 @@
   </div>
   <div style="margin-top: 45px">{% block content %}
     {% block header %}{% endblock %}
-    <div class="container-fulid">
-      <div class="row">
-        <div class="col-xs-2"></div>
-        <div class="col-xs-8">
-          <div class="row">
-            <div class="col-xs-8">{% block main %}{% endblock %}</div>
-            <div class="col-xs-4">{% block sidebar %}{% endblock %}
-              <footer style="line-height: 26px">
-                <a>独馨指南</a><span> · </span><a>知乎协议</a><span> · </span><a>隐私政策</a><br>
-                <a>应用</a><span> · </span><a>工作</a><span> · </span><a>申请开通知乎机构号</a><br>
-                <a>侵权举报</a><span> · </span><a>网上有害信息举报专区</a><br>
-                <a>违法和不良信息举报: 010-82716601</a><br>
-                <a>儿童色情信息举报专区</a><br>
-                <a>联系我们 © 2020 独馨</a><br>
-              </footer>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
     {% endblock %}</div>
+  <script>
+    $(document).ready(function () {
+      $('.bootstrap-tagsinput').attr('style', 'width: 100%');
+      $('.taginput').tagsinput({
+        maxTags: 5
+      });
+    });
+
+  </script>
+  {% block script %}{% endblock %}
 
 
 
