@@ -367,54 +367,6 @@
     </div>
   </nav>
 
-  <!-- <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: white; font-size: 14px; min-width: 1024px;">
-    <div class="container-fulid">
-        <div class="row">
-            <div class="col-xs-1"></div>
-            <div class="col-xs-10 ">
-
-                <div class="navbar-header">
-
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target=".navbar-collapse-example">
-                        <span class="sr-only">切换导航</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <a class="navbar-brand" href="{% url 'index' %}" style="font-size: 30px; color: #0084ff">知乎</a>
-                </div>
-                <div class="collapse navbar-collapse navbar-collapse-example">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">首页</a></li>
-                        <li><a href="{% url 'explore' %}">发现</a></li>
-                        <li><a href="{% url 'topics:index' %}">话题</a></li>
-
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        {% if user.is_authenticated %}
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding: 5px">
-                                    <img src="{{ user.get_image_url }}" class="img-rounded" width="30" height="30"></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{% url 'users:answers' user.id %}">我的主页</a></li>
-                                    <li><a href="{% url 'users:setting' %}">设置</a></li>
-                                    <li><a href="{% url 'logout' %}">退出</a></li>
-                                </ul>
-                            </li>
-                        {% else %}
-                            <li style="margin-top: 3px">
-                                
-                            </li>
-                            <li style="margin-top: 3px">
-                                <button class="Button Button-blue nav-btn" type="button" data-toggle="modal" data-target="#registerModal">加入知乎</button>
-                            </li>
-                            </ul>
-                        {% endif %}
-                </div><!-- END .navbar-collapse -->
-
   <!-- 对话框HTML -->
   <div class="modal fade" id="askModal">
     <div class="modal-dialog">
