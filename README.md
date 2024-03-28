@@ -2,6 +2,11 @@
 
 ## 团队
 
-- 陈远
+- Yuan Chen @chenyuan99
 
 ## 项目设计
+
+
+## Previous Design
+
+Duxin
